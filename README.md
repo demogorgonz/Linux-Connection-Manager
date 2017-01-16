@@ -6,9 +6,12 @@ curl https://vaskir.co/lcm/install.sh | sudo bash
 
 #Usage
 connect:
-**#    connect [connection-name] **
+
+**#    connmngr [connection-name] **
+
 add connections:
-**#    connect -a [connection-name] -c 'ssh [user@hostname]' -i [identity-file] **
+
+**#    connmngr -a [connection-name] -c 'ssh [user@hostname]' -i [identity-file] **
 
 
 # Donate:
