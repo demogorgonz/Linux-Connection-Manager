@@ -13,6 +13,8 @@ add connections:
 
 **# connmngr -a [connection-name] -c 'ssh [user@hostname]' -i [identity-file]**
 
+#TODO
+-Identity Management
 
 # Donate:
 
