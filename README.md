@@ -9,9 +9,12 @@ connect:
 
 **# connmngr [connection-name]**
 
-add connections:
+add connections(ssh example):
 
 **# connmngr -a [connection-name] -c 'ssh [user@hostname]' -i [identity-file]**
+
+print this usage:
+connmngr -h
 
 #TODO
 -Identity Management
