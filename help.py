@@ -3,7 +3,7 @@
 a = """
 Usage:
   connect:
-    connect ssh private-instance
+    connect [connection-name]
   add connections:
     connect -a [connection-name] -c 'ssh [user@hostname]' -i [identity-file]
 """
