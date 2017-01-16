@@ -1,0 +1,62 @@
+#!/usr/bin/python
+
+import sys, getopt, subprocess, os, json
+
+
+lib_path = sys.path[0].split('/')
+
+dataFile = '/etc/connmngr/data'
+
+dir_path = os.path.dirname(os.path.realpath("path"))
+
+def main(argv):
+
+    output = []
+    try:
+        opts, args = getopt.getopt(argv,"ha:c:i:",["ifile=","ofile="])
+    except getopt.GetoptError:
+        print "connect: bad options"
+        print 'try connect -h'
+        sys.exit()
+    if not opts == 0:
+        if sys.argv[1]:
+            if sys.argv[1] == 'ssh':
+                connectionType = sys.argv[1]
+                connectionName = sys.argv[2]
+                connect(connectionName)
+            else:
+                connectionName = sys.argv[1]
+                connect(connectionName)
+
+    new_connection_name, new_connection_command = ['','']
+    for opt, arg in opts:
+        if opt == '-h':
+            subprocess.call('python ' '/etc/connmngr/help.py', shell=True)
+            sys.exit()
+        elif opt in ("-a", "--add"):
+            new_connection_name = arg
+        elif opt in ("-c", "--command"):
+            new_connection_command = arg
+    if new_connection_name is not '' or new_connection_command is not '':
+        add_connection(new_connection_name, new_connection_command)
+
+def add_connection(name, command):
+    data = "%s,%s\n" % (name, command)
+    with open(dataFile, 'a') as file:
+        file.write(data)
+	print "Connection added successfully!"
+
+def connect (name):
+    with open(dataFile, 'r') as file:
+        for line in file.readlines():
+            connection = line.split(',')
+            if connection[0] == name:
+	    	print 'Connecting to', connection[0], '...'
+               	os.system(connection[1])
+
+def add_identity_file(ifile):
+    #TODO
+    print 'identity'
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
