@@ -30,4 +30,4 @@ connmngr -h
 ![btc](http://i.imgur.com/FeRpxAb.png)
 
 
-[Follow me on twitter @DemogorgonZ](https://twitter.com/DemogorgonZ)
+Follow me on twitter [@DemogorgonZ](https://twitter.com/DemogorgonZ)
