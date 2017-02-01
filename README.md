@@ -28,3 +28,6 @@ connmngr -h
 **Bitcoin: 1KWVA9qBfTHmzPMvDw4ociqnk71FoLm1mp**
 
 ![btc](http://i.imgur.com/FeRpxAb.png)
+
+
+[Follow me on twitter @DemogorgonZ](https://twitter.com/DemogorgonZ)
