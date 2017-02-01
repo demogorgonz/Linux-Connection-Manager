@@ -13,7 +13,7 @@ def main(argv):
 
     output = []
     try:
-        opts, args = getopt.getopt(argv,"ha:c:i:",["ifile=","ofile="])
+        opts, args = getopt.getopt(argv,"hla:c:i:",["ifile=","ofile="])
     except getopt.GetoptError:
         print "connect: bad options"
         print 'try connect -h'
@@ -32,6 +32,10 @@ def main(argv):
     for opt, arg in opts:
         if opt == '-h':
             subprocess.call('python ' '/etc/connmngr/help.py', shell=True)
+            sys.exit()
+        if opt == '-l':
+            file = open("/etc/connmngr/data", "r")
+            print file.read()
             sys.exit()
         elif opt in ("-a", "--add"):
             new_connection_name = arg
