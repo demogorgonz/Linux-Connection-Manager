@@ -13,6 +13,10 @@ add connections(ssh example):
 
 **# connmngr -a [connection-name] -c 'ssh [user@hostname]' -i [identity-file]**
 
+list connections:
+
+**#connmngr -l**
+
 print this usage:
 connmngr -h
 
